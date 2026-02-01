@@ -1,5 +1,5 @@
-using EmotionTracker;
 using System.Drawing;
+using EmotionTracker;
 using TMPro;
 using UnityEngine;
 
@@ -15,26 +15,28 @@ public class MoveOnBeat : MonoBehaviour
     public Sprite WrongReaction_S;
     public Sprite AngryReaction;
     public Sprite AngryReaction_S;
-    public Punti boh;
+
     private SpriteRenderer sr;
     private bool isNormal = true;
     private bool isStatic = false;
+
+    private string currentReation=""; 
+
     [Header("Settings")]
     public string correctExpression;
 
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        currentReation = "normal";
     }
 
     // Fondamentale per i Prefab: resetta lo stato ogni volta che l'NPC appare
     void OnEnable()
     {
-        // Reset delle variabili di stato
         isStatic = false;
         isNormal = true;
 
-        // Reset dello sprite iniziale
         if (normalImage != null)
             sr.sprite = normalImage;
 
@@ -44,59 +46,95 @@ public class MoveOnBeat : MonoBehaviour
 
     void OnDisable()
     {
-        // Disiscrizione per evitare errori di memoria quando il prefab sparisce
+        // Disiscrizione per evitare errori di memoria
         BeatManager.OnBeat -= HandleBeat;
     }
 
     void HandleBeat(int beatIndex)
     {
-        // Se l'NPC ha già reagito (male), non si muove più
+        // Se l'NPC non è bloccato (reazione errata), continua a muoversi a tempo
         if (!isStatic)
         {
-            ChangeSprite();
+            if(currentReation == "correctReaction")
+            {
+                ChangeSprite(CorrectReaction, CorrectReaction_S);
+                Debug.Log("Correct Reactiooon");
+
+            }
+            else if(currentReation == "angryReaction")
+            {
+                ChangeSprite(AngryReaction, AngryReaction_S);
+                Debug.Log("Angry Reactiooon");
+
+            }
+            else if(currentReation == "sadReaction")
+            {
+                ChangeSprite(WrongReaction, WrongReaction_S);
+                Debug.Log("Sad Reactiooon");
+
+            } else if(currentReation == "normal")
+            {
+                ChangeSprite(normalImage, normalImage_S);
+                Debug.Log("Normal Reactiooon");
+
+            }
+            else
+            {
+                Debug.Log("Orco Duro");
+            }
+            
+
+
         }
     }
 
-    void ChangeSprite()
+    void ChangeSprite(Sprite spriteNormal, Sprite sprite_S)
     {
-        sr.sprite = isNormal ? normalImage_S : normalImage;
+        sr.sprite = isNormal ? sprite_S : spriteNormal;
         isNormal = !isNormal;
     }
 
     public void ReactionNpc()
     {
-        // Se è già statico, ignoriamo ulteriori input per questo specifico prefab
-        if (isStatic) return;
-        Punti pointManager=FindFirstObjectByType<Punti>();
+
+        Punti pointManager = FindFirstObjectByType<Punti>();
         string detectedEmotion = ComputerVisionReceiver.CurrentEmotion.ToString();
+
+        if (pointManager == null)
+        {
+            Debug.LogError("Punti manager not found in scene!");
+            return;
+        }
 
         if (detectedEmotion == correctExpression)
         {
-            sr.sprite = CorrectReaction;
             pointManager.UpdatePunteggio(true, 500);
-            Debug.Log(gameObject.name + ": Correct!");
-            // Opzionale: isStatic = true; se vuoi che si fermi anche quando indovina
+            Debug.Log(gameObject.name + ": Correct! Detected: " + detectedEmotion);
+
+            currentReation = "correctReaction";
         }
         else if (ComputerVisionReceiver.CurrentEmotion == EmotionType.Angry)
         {
-            isStatic = true;
             pointManager.UpdatePunteggio(false, 300);
-            sr.sprite = AngryReaction;
             Debug.Log(gameObject.name + ": Angry Reaction");
+            currentReation = "angryReaction";
+        }
+        else if (ComputerVisionReceiver.CurrentEmotion == EmotionType.Sad)
+        {
+            pointManager.UpdatePunteggio(false, 100);
+            Debug.Log(gameObject.name + ": Sad Reaction");
+            currentReation = "sadReaction";
         }
         else
         {
-            isStatic = true;
             pointManager.UpdatePunteggio(false, 100);
-            sr.sprite = WrongReaction;
-            Debug.Log(gameObject.name + ": Wrong Reaction");
+            Debug.Log(gameObject.name + ": Epsressione Sbagliata. Aspettato: " + correctExpression + " Però hai fatto: " + detectedEmotion);
+            currentReation = "sadReaction";
         }
     }
-    public string GetCorrectExpression()//modificare in string
+
+    public string GetCorrectExpression()
     {
         return correctExpression;
     }
-
-
-    
 }
