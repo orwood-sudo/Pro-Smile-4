@@ -9,6 +9,7 @@ public class StressBar : MonoBehaviour
 {
     
     int StressIndex = 0;
+    [SerializeField] private GameObject Stress0; //cambiato qua
     [SerializeField] private GameObject Stress1;
     [SerializeField] private GameObject Stress2;
     [SerializeField] private GameObject Stress3;
@@ -17,16 +18,12 @@ public class StressBar : MonoBehaviour
 
     void Start()
     {
+        Stress0.SetActive(false);//cambiato qua
         Stress1.SetActive(false);
         Stress2.SetActive(false);
         Stress3.SetActive(false);
         Stress4.SetActive(false);
         Stress5.SetActive(false);
-    }
-
-    void Update()
-    {
-        
     }
     
     public void CheckStress()
