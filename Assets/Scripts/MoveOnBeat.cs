@@ -25,6 +25,11 @@ public class MoveOnBeat : MonoBehaviour
     [Header("Settings")]
     public string correctExpression;
 
+    //SoundEffects
+    public AudioSource correctSDX;
+    public AudioSource angrySDX;
+    public AudioSource sadSDX;
+
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -112,24 +117,28 @@ public class MoveOnBeat : MonoBehaviour
             Debug.Log(gameObject.name + ": Correct! Detected: " + detectedEmotion);
 
             currentReation = "correctReaction";
+            correctSDX.Play();
         }
         else if (ComputerVisionReceiver.CurrentEmotion == EmotionType.Angry)
         {
             pointManager.UpdatePunteggio(false, 300);
             Debug.Log(gameObject.name + ": Angry Reaction");
             currentReation = "angryReaction";
+            angrySDX.Play();
         }
         else if (ComputerVisionReceiver.CurrentEmotion == EmotionType.Sad)
         {
             pointManager.UpdatePunteggio(false, 100);
             Debug.Log(gameObject.name + ": Sad Reaction");
             currentReation = "sadReaction";
+            sadSDX.Play();
         }
         else
         {
             pointManager.UpdatePunteggio(false, 100);
             Debug.Log(gameObject.name + ": Epsressione Sbagliata. Aspettato: " + correctExpression + " Però hai fatto: " + detectedEmotion);
             currentReation = "sadReaction";
+            sadSDX.Play();
         }
     }
 

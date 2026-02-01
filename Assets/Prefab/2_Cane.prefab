@@ -112,5 +112,7 @@ MonoBehaviour:
   WrongReaction_S: {fileID: 21300000, guid: 1f00d41515bfaf34f85d5dde80e1dad9, type: 3}
   AngryReaction: {fileID: 21300000, guid: a272514a0c7a51d4aa5e954cdcf08460, type: 3}
   AngryReaction_S: {fileID: 21300000, guid: 32f06ca9634c33c428bce7aba53090f4, type: 3}
-  boh: {fileID: 90739176565076089, guid: b3fbeeb00b60625439e0597804d251bf, type: 3}
   correctExpression: Fear
+  correctSDX: {fileID: 1304453517632577472, guid: 749297dea00c4f24db60973c6889e791, type: 3}
+  angrySDX: {fileID: 5935574487517924805, guid: e17361ac56abadf4893533019af41ac3, type: 3}
+  sadSDX: {fileID: 5481304497773798290, guid: 01c66878bd41e474dba80973f99513ca, type: 3}

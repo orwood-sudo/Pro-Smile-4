@@ -292,6 +292,7 @@ MonoBehaviour:
   intervalBeats: 4
   Scena: 1
   levelLogic: {fileID: 837020166}
+  reactionCooldownTime: 0.2
 --- !u!4 &223582000
 Transform:
   m_ObjectHideFlags: 0
@@ -524,7 +525,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 2cbb014cbc724c048950dbdb50c61879, type: 3}
+  m_Resource: {fileID: 8300000, guid: c21f4095829c762438e5883429e797de, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
