@@ -18,14 +18,14 @@ public class StressBar : MonoBehaviour
 
     void Start()
     {
-        Stress0.SetActive(false);//cambiato qua
+        Stress0.SetActive(true);//cambiato qua
         Stress1.SetActive(false);
         Stress2.SetActive(false);
         Stress3.SetActive(false);
         Stress4.SetActive(false);
         Stress5.SetActive(false);
     }
-    
+
     public void CheckStress()
     {
         Spawner Spw = FindFirstObjectByType<Spawner>();/*

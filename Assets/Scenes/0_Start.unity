@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb40f4519b833ad4abff66220b13327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StressBar
+  Stress0: {fileID: 0}
   Stress1: {fileID: 186984847}
   Stress2: {fileID: 1899624569}
   Stress3: {fileID: 658642940}
@@ -565,7 +566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb1bb8c550fa4404481e8e103f6d2f54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7168db87a72e9b946828fba3aa683282, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -640,7 +641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b9feafa160bf654fb68f8636ea064c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc05fc88b4394cb47a74e1a4f998bf44, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1814,7 +1815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7168db87a72e9b946828fba3aa683282, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b9feafa160bf654fb68f8636ea064c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1889,7 +1890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8e406b15de658047a03631f308b143b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb1bb8c550fa4404481e8e103f6d2f54, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1964,7 +1965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc05fc88b4394cb47a74e1a4f998bf44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8e406b15de658047a03631f308b143b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
