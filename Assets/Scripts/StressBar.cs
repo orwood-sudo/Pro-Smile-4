@@ -28,6 +28,9 @@ public class StressBar : MonoBehaviour
 
     public void CheckStress()
     {
+        Debug.Log("CALL CHECK STRESS");
+        Debug.Log("CALL CHECK STRESS");
+        Debug.Log("CALL CHECK STRESS");
         Spawner Spw = FindFirstObjectByType<Spawner>();/*
         Debug.Log("PRINT COMPUTER" +Spw.getEncounterExpression());
         Debug.Log("PRINT EMOTION" +ComputerVisionReceiver.CurrentEmotion.ToString());*/

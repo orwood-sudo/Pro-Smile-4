@@ -48,7 +48,7 @@ public class BeatManager : MonoBehaviour
 
     void TriggerBeat()
     {
-        // Debug.Log($"Beat! {beatCount}");
+        Debug.Log($"Beat! {beatCount}");
         OnBeat?.Invoke(beatCount);
     }
 

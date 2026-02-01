@@ -31,6 +31,9 @@ public partial class Spawner : MonoBehaviour
     public LevelLogic levelLogic;
     StressBar stressBar;
 
+    private bool canCheckReaction = true; // Cooldown flag
+    [SerializeField] private float reactionCooldownTime = 0.2f;
+
     void Start()
     {
         stressBar = FindFirstObjectByType<StressBar>();
@@ -97,16 +100,23 @@ public partial class Spawner : MonoBehaviour
         }
         else if (isFirst && getExpressionOnBeat == 16)
         {
-            checkReazione();
+            if (isFirst)
+            {
+                //Debug.Log("Entratooo");
+                //Debug.Log("Entratooo");
+                //Debug.Log("Entratooo");
+                checkReazione();
+            }
             isFirst = false;
         }
-        if (getExpressionOnBeat == 8 && !isFirst)
+        if (getExpressionOnBeat == 8 || getExpressionOnBeat == 16)
         {
             checkReazione();
-        }
-        else if (getExpressionOnBeat == 16 && !isFirst)
-        {
-            checkReazione();
+
+            if (getExpressionOnBeat == 16)
+            {
+                isFirst = false;
+            }
         }
     }
 
@@ -166,8 +176,19 @@ public partial class Spawner : MonoBehaviour
     }
     void checkReazione()
     {
-        spawnedPool[currentPoolIndex].GetComponent<MoveOnBeat>().ReactionNpc();
+        if (!canCheckReaction) return;
+        if (currentPoolIndex < spawnedPool.Count)
+        {
+            spawnedPool[currentPoolIndex].GetComponent<MoveOnBeat>().ReactionNpc();
+            stressBar.CheckStress();
+            StartCoroutine(ReactionCooldownRoutine());
+        }
 
-        stressBar.CheckStress();
+    }
+    IEnumerator ReactionCooldownRoutine()
+    {
+        canCheckReaction = false;
+        yield return new WaitForSeconds(reactionCooldownTime);
+        canCheckReaction = true;
     }
 }
