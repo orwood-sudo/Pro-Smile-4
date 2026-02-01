@@ -104,10 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a76cc2c1003b4646a53a4df123ff3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveOnBeat
-  normalImage: {fileID: 7482194134314205911, guid: efe96831e913850469838d3015865cb0, type: 3}
-  squishImage: {fileID: 7482194134314205911, guid: e1014feb40a5dab4291e705719213d9d, type: 3}
+  normalImage: {fileID: 21300000, guid: 0d478275a608a6d439f14c9b191f752e, type: 3}
+  normalImage_S: {fileID: 21300000, guid: 579f80b31b8494d48a5d396467d803ba, type: 3}
   CorrectReaction: {fileID: 0}
-  WrongReaction: {fileID: -4805074306598319228, guid: 2b049c7c98c5ccd4088e7a9fbb701bb0, type: 3}
-  AngryReaction: {fileID: 0}
+  CorrectReaction_S: {fileID: 0}
+  WrongReaction: {fileID: 21300000, guid: eaf8d7cfb4abf8f4db71b91a82b3a6ad, type: 3}
+  WrongReaction_S: {fileID: 21300000, guid: 769926e8dbb402f4cabeb0c40a04750e, type: 3}
+  AngryReaction: {fileID: 21300000, guid: 258ac5819e1c691448333fd88894d573, type: 3}
+  AngryReaction_S: {fileID: 21300000, guid: c127bbea28d30eb43afb8310d3d1dc73, type: 3}
   boh: {fileID: 90739176565076089, guid: b3fbeeb00b60625439e0597804d251bf, type: 3}
   correctExpression: Fear

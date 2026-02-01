@@ -104,10 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a76cc2c1003b4646a53a4df123ff3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveOnBeat
-  normalImage: {fileID: 21300000, guid: 2bfa0b2ac6361e2428997f6ac680cd9e, type: 3}
-  squishImage: {fileID: 21300000, guid: ad2cda85392467143891eaa6119ffc41, type: 3}
+  normalImage: {fileID: 21300000, guid: ee254763418b5c647ae227e8d9eacb2b, type: 3}
+  normalImage_S: {fileID: 21300000, guid: b0eac3898b02eb246968903d252f7e91, type: 3}
   CorrectReaction: {fileID: 0}
-  WrongReaction: {fileID: 21300000, guid: 081dbfa5d762bcf48ada7e4839c10d73, type: 3}
-  AngryReaction: {fileID: 0}
+  CorrectReaction_S: {fileID: 0}
+  WrongReaction: {fileID: 21300000, guid: 2f3899b1218b99942b1a7dce12f4510e, type: 3}
+  WrongReaction_S: {fileID: 21300000, guid: b3e9e7b804265c048890fcb6f68aefa9, type: 3}
+  AngryReaction: {fileID: 21300000, guid: 70c4d9a9581a00c42b8d636f0f5079f9, type: 3}
+  AngryReaction_S: {fileID: 21300000, guid: b0eac3898b02eb246968903d252f7e91, type: 3}
   boh: {fileID: 90739176565076089, guid: b3fbeeb00b60625439e0597804d251bf, type: 3}
   correctExpression: 

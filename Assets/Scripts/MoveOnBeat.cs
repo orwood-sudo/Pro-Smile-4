@@ -8,10 +8,13 @@ public class MoveOnBeat : MonoBehaviour
 {
     [Header("Sprites")]
     public Sprite normalImage;
-    public Sprite squishImage;
+    public Sprite normalImage_S;
     public Sprite CorrectReaction;
+    public Sprite CorrectReaction_S;
     public Sprite WrongReaction;
+    public Sprite WrongReaction_S;
     public Sprite AngryReaction;
+    public Sprite AngryReaction_S;
     public Punti boh;
     private SpriteRenderer sr;
     private bool isNormal = true;
@@ -56,7 +59,7 @@ public class MoveOnBeat : MonoBehaviour
 
     void ChangeSprite()
     {
-        sr.sprite = isNormal ? squishImage : normalImage;
+        sr.sprite = isNormal ? normalImage_S : normalImage;
         isNormal = !isNormal;
     }
 

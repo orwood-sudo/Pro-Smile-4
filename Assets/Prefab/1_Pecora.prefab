@@ -104,10 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a76cc2c1003b4646a53a4df123ff3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveOnBeat
-  normalImage: {fileID: 6618696351121547294, guid: 07417ca96a54790469e1f771f8fe9876, type: 3}
-  squishImage: {fileID: 21300000, guid: 3f380054abcf14a45b539525ce47eeaa, type: 3}
-  CorrectReaction: {fileID: 6618696351121547294, guid: 07417ca96a54790469e1f771f8fe9876, type: 3}
-  WrongReaction: {fileID: -1311257637754500513, guid: 127a30e5b49886e47995e4c9c53ab257, type: 3}
-  AngryReaction: {fileID: 6618696351121547294, guid: 60d8fc6dd2173b9479b8b0064ff6a13d, type: 3}
+  normalImage: {fileID: 21300000, guid: 1d5c4c7dc57f02346977a61d06e2fe4f, type: 3}
+  normalImage_S: {fileID: 21300000, guid: 32786affc3a37c548963e28c556fac6a, type: 3}
+  CorrectReaction: {fileID: 0}
+  CorrectReaction_S: {fileID: 0}
+  WrongReaction: {fileID: 21300000, guid: 5bfb5c2ab4f81bc40b9c5107981a0076, type: 3}
+  WrongReaction_S: {fileID: 21300000, guid: 924a3a6a6ec060d499eb596108b8edac, type: 3}
+  AngryReaction: {fileID: 21300000, guid: 90e71c844a5361641bfac74f97bfa031, type: 3}
+  AngryReaction_S: {fileID: 21300000, guid: f8415114570afe94d9aaef040ceb8294, type: 3}
   boh: {fileID: 90739176565076089, guid: b3fbeeb00b60625439e0597804d251bf, type: 3}
   correctExpression: Happy
